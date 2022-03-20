@@ -1,0 +1,59 @@
+.symptoms
+{
+    width: 80%;
+}
+@media screen and (max-width:750px) {
+    .symptoms{
+        width: 100%;
+    }
+    
+}
+.symptomsectionTwo .childOneTwo h6{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #2a81ea;
+}
+.symptomsectionTwo .childOneTwo h4{
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 700;
+    color: #50658e;
+}
+.symptomsectionTwo p{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    color: #3d4b69;
+}
+.childTwoTwo h6 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #3d4b69;
+}
+.childTwoTwo span {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    color: #3d4b69;
+}
+.childTwoTwo img {
+    width: 100px;
+    height: 100px;
+}
+.imp i {
+    color: rgb(156, 194, 247);
+}
+.imp h6 {
+    color: #2a81ea;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+.imp span {
+    color: #3d4b69;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+}

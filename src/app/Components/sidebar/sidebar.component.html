@@ -1,0 +1,79 @@
+<nav class="position-relative ">
+    <div class="sideBar text-white shadow">
+        <div>
+            <div class="ms-3 py-2">
+                <img src="../../../assets/images/logo-dark.png" alt="">
+            </div>
+            <div class="line"></div>
+        </div>
+        <ul class="list-unstyled py-2">
+            <li *ngIf="isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/home" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #D1D7F7;" class="fa-solid fa-house-chimney me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0 ">Home</h6>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/about" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #FC8E75;" class="fa-solid fa-bugs me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">About Corona</h6>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/symptoms" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #6CE0F5;" class="fa-solid fa-head-side-cough me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">Symptoms</h6>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/prevention" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #F3A4B5;" class="fa-solid fa-head-side-mask me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">Prevention</h6>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/treatment" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #2DCE89;" class="fa-solid fa-pills me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">Treatment</h6>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/faq" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #F5365C;" class="fa-solid fa-person-circle-question me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">FAQ</h6>
+                </a>
+            </li>
+            <li *ngIf="!isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/login" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #FC8E75;" class="fa-solid fa-right-to-bracket me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">LogIn</h6>
+                </a>
+            </li>
+            <li *ngIf="!isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" routerLink="/register" class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #5E72E4;" class="fa-solid fa-pencil me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">Register</h6>
+                </a>
+            </li>
+            <li *ngIf="isLoggedIn"  class=" mx-3 mb-2">
+                <a routerLinkActive="activeLink" (click)="loggingOut()"  class="d-flex px-3 py-2 text-white align-items-center" >
+                    <i style="color: #5E72E4;" class="fa-solid fa-square-xmark me-3 fa-2x"></i>
+                    <h6 class="m-0 p-0">LogOut</h6>
+                </a>
+            </li>
+            <div class="line"></div>
+            
+
+
+
+
+
+
+        </ul>
+    </div>
+    <button (click)="showSideBar()" class=" btn btn-primary" id="myBtn">
+        <i class="fa-solid fa-gear fa-1x"></i>
+    </button>
+</nav>
+
+  

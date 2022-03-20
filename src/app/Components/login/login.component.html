@@ -1,0 +1,21 @@
+<div class="login vh-100 ms-auto d-flex align-items-center justify-content-center position-relative flex-nowrap" id="particles-js">
+    <div *ngIf="loginError" class="position-absolute bottom-0 alert alert-info">
+        <h6>{{loginError}}</h6>
+
+    </div>
+    <form (ngSubmit)="sendData(loginForm)" class="position-absolute   w-50" [formGroup]="loginForm">
+        <label class="fw-bold text-white" for="email">email</label>
+        <input class="form-control shadow my-2" formControlName="email" type="email" name="email" >
+        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-info ">
+            <p *ngIf="loginForm.get('email')?.errors?.['required']" class="m-0 fw-bold">email is required</p>
+            <p *ngIf="loginForm.get('email')?.errors?.['email']" class="m-0 fw-bold">email is not valid</p>
+        </div>
+        <label class="fw-bold text-white"  for="password">password</label>
+        <input class="form-control shadow my-2" formControlName="password" type="password" name="password" >
+        <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="alert alert-info ">
+            <p *ngIf="loginForm.get('password')?.errors?.['required']" class="m-0 fw-bold">password is required</p>
+            <p *ngIf="loginForm.get('password')?.errors?.['pattern']" class="m-0 fw-bold">password is not valid</p>
+        </div>
+        <button class="btn btn-dark" [disabled]="loginForm.invalid" type="submit">Login</button>
+    </form> 
+</div>

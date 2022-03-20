@@ -1,0 +1,16 @@
+.login
+{
+    width: 80%;
+    background-image: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+
+}
+@media screen and (max-width:750px) {
+    .login{
+        width: 100%;
+    }
+    
+}
+.btn {
+    background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%) !important;
+    border: 0px;
+}

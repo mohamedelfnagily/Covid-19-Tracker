@@ -1,0 +1,87 @@
+.about{
+    width: 80%;
+}
+@media screen and (max-width:750px) {
+    .about{
+        width: 100%;
+    }
+    
+}
+.aboutchildOne h5{
+    color: #2A81EA; 
+    font-size: 18px;
+    line-height: 22px;
+    
+ }
+ .aboutchildOne h2{
+    color: #50658e; 
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 700;
+ 
+ }
+ .aboutchildOne h4{
+     color: #3d4b69;
+     font-size: 20px;
+     line-height: 30px;
+     font-weight: 700;
+ }
+ .aboutchildOne h4 span {
+     color: #3d4b69;
+     font-size: 20px;
+     line-height: 30px;
+     font-weight: 300;
+ }
+ 
+ .aboutchildOne p{
+     font-size: 16px;
+     line-height: 24px;
+     color:#3d4b69 ;
+     font-weight: 300;
+ }
+ .line{
+     width: 100%;
+     height: 5px;
+     background-color: #9CC2F7;
+ }
+ .aboutchildTwo h6 {
+     font-size: 20px;
+     line-height: 24px;
+     font-weight: 700;
+     color: #465675;
+ 
+ }
+ .aboutchildTwo p {
+     font-size: 16px;
+     line-height: 24px;
+     font-weight: 300;
+     color: #2a81ea;
+     cursor: pointer;
+ }
+ .aboutsectionTwo .childOneTwo h6{
+     font-size: 18px;
+     line-height: 22px;
+     font-weight: 700;
+     color: #2a81ea;
+ }
+ .aboutsectionTwo .childOneTwo h4{
+     font-size: 40px;
+     line-height: 52px;
+     font-weight: 700;
+     color: #50658e;
+ }
+ .aboutsectionTwo p{
+     font-size: 16px;
+     line-height: 24px;
+     font-weight: 300;
+     color: #3d4b69;
+ }
+ .childTwoTwo h6 {
+     font-size: 20px;
+     line-height: 24px;
+     font-weight: 700;
+     color: #2a81ea;
+ }
+ .question{
+     width: max-content;
+ }

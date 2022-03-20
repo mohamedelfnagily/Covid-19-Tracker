@@ -1,0 +1,28 @@
+.faq{
+    width: 80%;
+}
+@media screen and (max-width:750px) {
+    .faq{
+        width: 100%;
+    }
+    
+}
+.questionHead{
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+.questionHead p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+}
+.questionHead:hover {
+    border-color: #2a81ea !important;
+    color: #2a81ea;
+}
+.questionHeadFocus{
+    border-color: #2a81ea !important;
+    color: #2a81ea;
+}

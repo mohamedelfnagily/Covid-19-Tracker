@@ -1,0 +1,54 @@
+.sideBar {
+    background-color: #fff;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    bottom: 0%;
+    width: 20%;
+}
+
+.line{
+    height: 1px;
+    width: 90%;
+    background-color: #ccc;
+    margin: auto;
+}
+
+.sideBar a {
+    text-decoration:  none;
+    cursor: pointer;
+}
+
+.sideBar h6 {
+    color: #949494;
+}
+
+.activeLink
+{
+    background-image: linear-gradient( 135deg, #EE9AE5 10%, #5961F9 100%);
+    color: white  !important;
+    border-radius: 10px;
+}
+.activeLink h6 {
+    color: white;
+}
+
+#myBtn{
+    display: none;
+    position: fixed;
+    left: 0px;
+}
+@media screen and (max-width:750px) {
+    #myBtn{
+        display: flex;
+        top: 25%;
+        z-index: 10;
+    }
+    .sideBar{
+        display: none;
+        
+        width: 80%;
+        z-index: 10;
+    }
+    
+}

@@ -1,0 +1,256 @@
+<section class="homeSection position-relative d-flex align-items-center ms-auto me-2">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-md-12 homeChildOne">
+                <div class="container pt-5">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <div class="detailsContainer  p-3 child1 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>Total Cases</h6>
+                                        <h4>{{totalCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-lungs-virus fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 3.48%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="detailsContainer  p-3 child2 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>Active Cases</h6>
+                                        <h4>{{activeCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-head-side-cough fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 1.5%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="detailsContainer  p-3 child3 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>Recovered Cases</h6>
+                                        <h4>{{recoveredCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-face-laugh-beam fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 2%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="detailsContainer  p-3 child4 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>New Cases</h6>
+                                        <h4>{{newCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-face-frown fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 0.1%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 homeChildTwo position-relative my-3">
+                <app-map [latitude]="lat" [longitude]="long"></app-map>
+                <div class="position-absolute top-0 end-0 start-0 mx-2 mb-5">
+                    <div class="box text-center text-white">
+                        <h3 class="fw-bold h1">{{nameOfCountry}}</h3>
+                        <img *ngIf="countryFlag" [src]="countryFlag" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 homeChildThree my-3">
+                <h5 class="text-center ">New Positive Cases</h5>
+                <p class="text-center">Select a Country to see more details</p>
+                <div *ngIf="searchError" class="alert alert-danger">
+                    <h6>{{searchError}}</h6>
+                </div>
+                <form  class="mx-3" [formGroup]="searchForm">
+                    <input autocomplete="off" (keyup)="getCountryBySearch(searchForm)" formControlName="countryChars"  placeholder="Search for a country..." class="form-control my-2" type="text" name="countryChars" id="countryChars">
+                </form>
+                <div class="countryBox" id="countryContainer">
+                    <div  class="mx-3  p-2 country my-2 " *ngFor="let country of affectedCountries" (click)="getCountry(country)">
+                        <p class="p-0 m-0">{{country}}</p>
+                    </div>
+                </div>
+
+
+
+    
+            </div>
+        </div>
+    </div>
+</section>
+<section class="charts ms-auto pb-5 mt-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 ">
+                <app-charts [countryName]="selectedCountry" [totalCases]="totalCasesArray"></app-charts>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 my-3">
+                            <div class="detailsContainer  p-3 child5 text-white  shadow">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>People Died</h6>
+                                        <h4>{{deathCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-skull fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 3.48%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <div class="detailsContainer  shadow  p-3 child6 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>Population</h6>
+                                        <h4>{{countryPopulation}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-people-roof fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 1.5%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <div class="detailsContainer  p-3 child1 text-white  shadow">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>Total Cases</h6>
+                                        <h4>{{totalCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-lungs-virus fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 3.48%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <div class="detailsContainer  shadow  p-3 child2 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>Active Cases</h6>
+                                        <h4>{{activeCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-head-side-cough fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 1.5%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-3">
+                            <div class="detailsContainer  shadow p-3 child3 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>Recovered Cases</h6>
+                                        <h4>{{recoveredCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-face-laugh-beam fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 3.48%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-md-6 my-3">
+                            <div class="detailsContainer  shadow  p-3 child4 text-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6>New Cases</h6>
+                                        <h4>{{newCases}}</h4>
+                                    </div>
+                                    <div>
+                                        <i class="fa-solid fa-face-frown fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="p-0 m-0"><i class="fa-solid fa-arrow-up"></i> 0.1%</p>
+                                    <small>Since last month</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-12 text-center childOneTwo pb-4 mt-5">
+                <h6>SPREAD STATISTICS IN AFFECTED COUNTRIES</h6>
+                <h4>SPREAD OF CORONAVIRUS</h4>        
+            </div>
+            <div class="col-md-6 mb-2">
+                <app-line-chart></app-line-chart>
+            </div>
+            <div class="col-md-6 pt-3">
+                <div class="owlCont mt-3">
+                    <div>
+                        <owl-carousel-o [options]="customOptions">
+
+                            <ng-container *ngFor="let slide of newsImages">
+                              <ng-template carouselSlide [id]="slide">
+                                <img [src]="slide" [alt]="slide" [title]="slide">
+                              </ng-template>
+                            </ng-container>
+                        
+                          </owl-carousel-o>
+                    </div>
+                    <div class="child5">
+                        <h2 style="font-weight: 900;" class="h1 px-4 py-5 mt-3 text-center text-white">STAY SAFE AND WEAR YOUR MASK.</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</section>
